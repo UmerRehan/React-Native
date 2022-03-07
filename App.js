@@ -2,11 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Profile  from './screens/Profile';
 import Constants from 'expo-constants';
+import CreateEmployee from './screens/CreateEmployee';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Profile />
+      <CreateEmployee />
     </View>
   );
 }
