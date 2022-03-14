@@ -59,13 +59,38 @@ export default function CreateEmployee() {
         </Button>
 
 
-        <Modal visible="VModal"  >
-            <Button icon="camera" style={styles.input} mode="contained" onPress={() => console.log('Pressed')}>
+        <Modal 
+
+        visible={VModal}
+        animationType="slide"
+        transparent={true}
+        onRequestClose={() => {
+        setVModal(false);
+        }}  
+        >
+
+          <View style={styles.modalview} >
+
+            <View style={styles.modalbutton}>
+
+            <Button icon="camera" style={styles.input} color="#009ea1" mode="contained" onPress={() => console.log('Pressed')}>
                   Camera
             </Button>
-            <Button icon="camera" style={styles.input} mode="contained" onPress={() => console.log('Pressed')}>
+            <Button icon="image-multiple" style={styles.input} color="#009ea1" mode="contained" onPress={() => console.log('Pressed')}>
                 Gallery
             </Button>
+
+            <View style={{alignItems:"center"}}>
+
+            <Button icon="arrow-left-circle" style={{margin:10,width:120}} color="#009ea1" mode="contained" onPress={() => setVModal(false)}>
+                Back
+            </Button>
+
+            </View>
+
+            </View>
+
+            </View>
 
         </Modal>
 
@@ -80,5 +105,16 @@ export default function CreateEmployee() {
     },
     input:{
         margin:10,
+    },
+    modalview: {
+      position: "absolute",
+      bottom: 2,
+      width: "100%",
+      backgroundColor: "white",
+  
+    },
+    modalButton:{
+      flexDirection:"row",
+      justifyContent:"space-evenly"
     }
   });
